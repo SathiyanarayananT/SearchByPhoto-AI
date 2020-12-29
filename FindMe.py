@@ -2,14 +2,15 @@ import face_recognition as fr
 import cv2
 import os
 
-myFace = fr.load_image_file("Dhoni_ref.jpg")
+refPhoto = input("Enter file location of unique face to be searched...")
+myFace = fr.load_image_file(refPhoto)
 myFace = cv2.resize(myFace,(0,0) , fx=0.25, fy=0.25)
 myFace_encoding = fr.face_encodings(myFace)
 
 allPhotos = {}
 
 
-folder = "C:\\Users\\i343453\\Desktop\\MyPhotos"
+folder = input("Enter folder location to be searched...")
 for filename in os.listdir(folder):
     photo = cv2.imread(os.path.join(folder,filename))
     if photo is not None:
