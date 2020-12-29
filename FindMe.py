@@ -25,7 +25,7 @@ for i in range(len(photos)):
 
     face_locations = fr.face_locations(rgbPhoto)
     face_encodings = fr.face_encodings(rgbPhoto, face_locations)
-   for j in range(len(face_encodings)):
+    for j in range(len(face_encodings)):
         face_encoding = face_encodings[j]
         matchesBool = fr.compare_faces(myFace_encoding , face_encoding)
         face_distances = fr.face_distance(myFace_encoding , face_encoding)
